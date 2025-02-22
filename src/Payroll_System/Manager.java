@@ -17,8 +17,8 @@ public class Manager extends StaffMember {
         public void display() {
             System.out.println("Staff: " + this.getClass().getName());
             super.display();
-            System.out.println("Bonus$: " + this.bonus);
-            System.out.println("Total Salary $: " + calculateSalary());
+            System.out.println("Bonus$: \t\t\t" + this.bonus);
+            System.out.println("Total Salary: \t\t" + "$"+String.format("%.2f", calculateSalary()));
         }
 
         public double getBonus () {

@@ -16,15 +16,15 @@ public class SalesRep extends StaffMember{  //Extends keyword is used when a cla
 
     //allowance is 5% of salary
     public double calculateAllowance() {
-        return (hoursWorked * 1500)*0.05;
+        return (hoursWorked * 1500)*0.1;
     }
 
     @Override
     public void display(){
         System.out.println("Staff: " + this.getClass().getName());
         super.display();
-        System.out.println("Allowance$: " + this.allowance);
-        System.out.println("Total Salary $: " + calculateSalary());
+        System.out.println("Allowance$: \t\t" + this.allowance);
+        System.out.println("Total Salary: \t\t" +"$" + String.format("%.2f", calculateSalary()));
     }
 
     public double getAllowance() {

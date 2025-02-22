@@ -18,15 +18,15 @@ public class Payroll {
         salesReps.add(new SalesRep("Gwendolyn", "Johnson", "Marketing", 55));
 
         //Display Managers information
-        System.out.println("\nManager Details:");
+        System.out.println("\n******* Manager Details *******\n");
         manager_1.display();
-        System.out.println("Total Salary$: " + manager_1.calculateSalary());
+        //System.out.println("Total Salary$: " + manager_1.calculateSalary());
 
         //Display Sales Representative Information
-        System.out.println("\nSales Representative Details: ");
         for (SalesRep rep : salesReps) {
+            System.out.println("\n******* Sales Representative Details ******* \n");
             rep.display();
-            System.out.println("Total Salary$: " + rep.calculateSalary());
+            //System.out.println("Total Salary$: " + rep.calculateSalary());
         }
         //generate paystub and write to a file
         generatePaystub(manager_1, salesReps);
@@ -35,23 +35,26 @@ public class Payroll {
     public static void generatePaystub(Manager manager_1, ArrayList<SalesRep> salesReps)  {
         try{
             FileWriter writer = new FileWriter("paystub.txt");
+            writer.write("Staff Pay slip Details\n\n");
             //Managers Details
-            writer.write("Manager Details:\n");
-            writer.write("Name: " + manager_1.getFirstname() + " " + manager_1.getLastname() + "\n");
-            writer.write("Department: " + manager_1.getDeptName() + "\n");
-            writer.write("Hours Worked: " + manager_1.getHoursWorked());
-            writer.write("Bonus $: " + manager_1.getBonus() + "\n");
-            writer.write("Total Salary$: " + manager_1.calculateSalary() + "\n");
+            writer.write("******* Manager *******\n");
+            writer.write("Name: \t\t" + manager_1.getFirstname() + " " + manager_1.getLastname() + "\n");
+            writer.write("Department: \t" + manager_1.getDeptName() + "\n");
+            writer.write("Hours Worked: \t" + manager_1.getHoursWorked()+ "\n");
+            writer.write("Bonus: \t\t" + "$"+manager_1.getBonus() + "\n");
+            writer.write("Total Salary: \t" + "$"+manager_1.calculateSalary() + "\n");
 
             //Sales Representative Details
-            writer.write("Sales Representative Details: \n");
+
             for (SalesRep rep : salesReps) {
-                writer.write("Name: " + rep.getFirstname() + " " + rep.getLastname() + "\n");
-                writer.write("Department: " + rep.getDeptName() + "\n");
-                writer.write("Hours Worked: " + rep.getHoursWorked() + "\n");
-                writer.write("Allowance $: " + rep.getAllowance() + "\n");
-                writer.write("Total Salary $: " + rep.calculateSalary() + "\n");
+                writer.write("\n******* Sales Representative ******* \n");
+                writer.write("Name: \t\t\t" + rep.getFirstname() + " " + rep.getLastname() + "\n");
+                writer.write("Department: \t\t" + rep.getDeptName() + "\n");
+                writer.write("Hours Worked: \t\t" + rep.getHoursWorked() + "\n");
+                writer.write("Allowance: \t\t" + "$"+rep.getAllowance() + "\n");
+                writer.write("Total Salary: \t\t" + "$"+rep.calculateSalary() + "\n");
             }
+
             //close file
             writer.close();
             System.out.println("\n Pay Stub successfully generated");

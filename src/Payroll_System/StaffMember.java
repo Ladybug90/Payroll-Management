@@ -19,9 +19,9 @@ public abstract class StaffMember {
     public abstract double calculateSalary();
 
     public void display () {
-        System.out.println("Name: " + this.firstname + "  " + this.lastname);
-        System.out.println("Department Name: " + this.deptName);
-        System.out.println("Hours Worked: " + this.hoursWorked);
+        System.out.println("Name: \t\t\t\t" + this.firstname + "  " + this.lastname);
+        System.out.println("Department Name: \t" + this.deptName);
+        System.out.println("Hours Worked: \t\t" + this.hoursWorked);
     }
 
     public String getFirstname() {
