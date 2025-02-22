@@ -1,3 +1,10 @@
+/*
+Sannteen Budda 2017001936
+Shanna-Deen Knight 2301010612
+Kemar Lemonious 1300036191
+Collin Clarke 2301010852
+*/
+
 package Payroll_System;
 
 public class SalesRep extends StaffMember{  //Extends keyword is used when a class is inheriting from a super class
