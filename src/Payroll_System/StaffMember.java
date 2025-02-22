@@ -16,7 +16,7 @@ public abstract class StaffMember {
         this.hoursWorked = hrswrk;
 
     }
-    abstract double calculateSalary();
+    public abstract double calculateSalary();
 
     public void display () {
         System.out.println("Name: " + this.firstname + "  " + this.lastname);

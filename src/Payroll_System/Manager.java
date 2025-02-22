@@ -8,16 +8,13 @@ public class Manager extends StaffMember {
         //use "Super" keyword to call the constructor from the Parent class
         super(fname, lname, dptname, hrswrk);
         this.bonus = bnus;
-
-
+        }
         @Override
         public double calculateSalary() {
             return (this.hoursWorked * 2500) + this.bonus;
         }
-
-
         @Override
-        public void display () {
+        public void display() {
             System.out.println("Staff: " + this.getClass().getName());
             super.display();
             System.out.println("Bonus$: " + this.bonus);
@@ -30,6 +27,6 @@ public class Manager extends StaffMember {
         public void setBonus(double bonus){
             this.bonus = bonus;
         }
-    }
+
 }
 
